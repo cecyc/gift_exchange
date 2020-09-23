@@ -55,15 +55,19 @@ class GiftExchange:
         valid_match (Dict): Dict of matched person
         """
 
-        # copy csv data so we don't mutate it and remove sender from pool
-        csv_data = copy.copy(csv_data)
-        csv_data.remove(sender)
-        data_len = len(csv_data) - 1
+        # copy csv data so we don't mutate it
+        csv_data_cp = copy.copy(csv_data)
+
+        # remove sender from pool
+        csv_data_cp.remove(sender)
+
+        # get max index for range
+        data_len = len(csv_data_cp) - 1
 
         valid_match = None
         while not valid_match:
             random_match_index = random.randint(0, data_len)
-            match = csv_data[random_match_index]
+            match = csv_data_cp[random_match_index]
             match_name = match.get('name')
 
             if match_name not in self.has_been_paired:
