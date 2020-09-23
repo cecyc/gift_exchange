@@ -34,6 +34,8 @@ class GiftExchange:
 
             # write header row
             csvwriter.writerow(['sender', 'match_name', 'match_email'])
+
+            # write matches to csv
             for sender in match_list.keys():
                 match = match_list.get(sender)
                 match_name = match.get('name')

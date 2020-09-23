@@ -39,8 +39,8 @@ class TestGiftExchange(unittest.TestCase):
         match = gift_exchange.get_valid_match_for_sender(
             self.mock_data, self.sender)
 
-        # assert match is marked as paired
-        self.assertFalse(match in gift_exchange.has_been_paired)
+        # assert latest match is marked as paired
+        self.assertEqual(match.get('name'), gift_exchange.has_been_paired[-1])
 
     def test_swap_picks(self):
         """
