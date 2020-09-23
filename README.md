@@ -10,7 +10,7 @@ Simply run `python run_gift_exchange_script.py -f PATH_TO_CSV_OF_NAMES`
 
 ### Troubleshooting
 
-**Please use Python 3** as Python 2 has been sunsetted!
+This will run in Python 2, but it was written in Python 3, so Python 3 is recommended.
 
 If you need to update your version of Python, I recommend [pyenv](https://github.com/pyenv/pyenv)
 
